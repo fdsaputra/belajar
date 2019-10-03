@@ -1,0 +1,677 @@
+﻿$(if http-status == 302)Hotspot login required$(endif)
+$(if http-header == "Location")$(link-redirect)$(endif)
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rexzon</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Saptavarana">
+
+    <link rel="shortcut icon" href="images\favicon.ico">
+
+    <!-- Magnific-popup -->
+    <link rel="stylesheet" href="css\magnific-popup.css">
+
+    <!--Slider Css-->
+    <link href="css\owl.carousel.css" rel="stylesheet">
+    <link href="css\owl.theme.css" rel="stylesheet">
+    <link href="css\owl.transitions.css" rel="stylesheet">
+
+    <!-- Animate Css -->
+    <link href="css\aos.css" rel="stylesheet">
+
+    <!-- Icon -->
+    <link href="css\mobiriseicons.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css\materialdesignicons.min.css">
+
+    <!--bootstrap Css-->
+    <link rel="stylesheet" type="text/css" href="css\bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css\style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom_nav_menu sticky">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand logo" href="index.html">
+                <img src="images\logo-2.png" alt="" class="img-fluid logo-light">
+                <img src="images\logo-dark.png" alt="" class="img-fluid logo-dark">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#clients" class="nav-link">Client's</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- Home Section Start-->
+    <section class="bg_home_tech_soft full_height_100vh_home" id="home">
+        <!-- <div class="bg_overlay_cover_on"></div> -->
+        <div class="home_table_cell">
+            <div class="home_table_cell_center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mt-3">
+                                <h1 class="home_title text-white mx-auto text-capitalize mb-0 font-weight-normal pt-4">MI-Goreng Hotspot</h1>
+                                <div class="home_text_details">
+                                    <p class="home_subtitle mt-4 mb-0">Selamat datang di layanan MI-Goreng Hotspot</p>
+                                </div>
+                                <div class="card-block py-lg px-md">
+                                    <form id="loginForm" class="md-form form-light" role="form" action="$(link-login-only)" method="post">
+                                        <input type="hidden" name="dst" value="$(link-orig)"/>
+                                        <input type="hidden" name="popup" value="true"/>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label style="color: #ffffffe8" for="inputUser" class="form-label">Username</label>
+                                            <div class="md-form-line-wrap">
+                                              <input id="inputUser" type="text" name="username" placeholder="Username" class="form-control" autofocus required>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label style="color: #ffffffe8" for="inputPassword" class="form-label">Password</label>
+                                            <div class="md-form-line-wrap">
+                                              <input id="inputPassword" type="password" name="password" placeholder="Password" class="form-control" required>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- <div class="col-md-8">
+                                          <div class="form-group">
+                                            $(if error)
+                                            <p><font style="color: #ffffffe8">Terjadi kesalahan: </font>$(error)</p>
+                                            $(endif)
+                                          </div>
+                                        </div> -->
+                                        <div class="col-md-8">
+                                          <div class="form-group mb-0">
+                                            <button type="submit" class="btn btn-block btn_outline btn_rounded"><span class="btn-elem-wrap"> <span class="icon fa fa-send"></span> <span class="text">LOGIN</span></span></button><span style="display: none;" class="form-notify help-block mb-0"></span>
+                                          </div> 
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-group mb-0">
+                                                <div style="color: #ffffff9c; font-size: 10px" align=center>Powered by MikroTik RouterOS</div>                                             </div> 
+                                          </div>
+                                        
+                                      </div>
+                                    </form>
+                                  </div>
+                                <!-- <div class="home_btn_manage mt-4 pt-3">
+                                    <a href="#" class="btn btn_outline btn_rounded mr-3">Read More</a>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="home_side_img mt-3">
+                                <img src="images\info1.png" alt="" class="img-fluid mx-auto d-block">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End-->
+
+    <!-- About Start-->
+    <section class="section_all bg-light" id="about">
+        <div class="container">
+            <div class="row vertical_content_manage" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <div class="about_details mt-3">
+                        <h3 class="text-capitalize mb-3">Designed & Worked by the Latest Integration</h3>
+                        <div class="section_title_border"></div>
+                        <p class="text_muted mt-3"> You're never imagine that powerfull & creative business could be made that easy, The Simpale Payment Solution. </p>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-6">
+                            <div class="about_details_box bg-white p-4 mt-3">
+                                <p class="text_muted mb-0">There is now an abundance of readable dummy texts. These are required purely.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about_details_box bg-white p-4 mt-3">
+                                <p class="text_muted mb-0">There is now an abundance of readable dummy texts. These are required purely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img_about mt-3">
+                        <img src="images\info4.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About End  -->
+
+    <!-- Services Start -->
+    <section class="section_all" id="services">
+        <div class="container">
+            <div class="row vertical_content_manage" data-aos="fade-up">
+                <div class="col-lg-5">
+                    <div class="services_img mt-3">
+                        <img src="images\info3.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row mt-3">
+                        <div class="col-lg-6">
+                            <div class="services_boxes p-4 mt-3">
+                                <div class="services_icon ">
+                                    <i class="mbri-desktop text-white bg_first_service"></i>
+                                </div>
+                                <div class="services_desc mt-4">
+                                    <h5 class="font-weight-bold">Graphic Design</h5>
+                                    <p class="mt-3 text_muted mb-0">The standard chunk of Lorem Ipsum used since the is reproduced below for those interested.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="services_boxes p-4 mt-3">
+                                <div class="services_icon">
+                                    <i class="mbri-features text-white bg_second_service"></i>
+                                </div>
+                                <div class="services_desc mt-4">
+                                    <h5 class="font-weight-bold">Unlimited Color</h5>
+                                    <p class="mt-3 text_muted mb-0">The standard chunk of Lorem Ipsum used since the is reproduced below for those interested.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-lg-6">
+                            <div class="services_boxes p-4 mt-3">
+                                <div class="services_icon">
+                                    <i class="mbri-globe-2 text-white bg_third_service"></i>
+                                </div>
+                                <div class="services_desc mt-4">
+                                    <h5 class="font-weight-bold">Media Marketing</h5>
+                                    <p class="mt-3 text_muted mb-0">The standard chunk of Lorem Ipsum used since the is reproduced below for those interested.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="services_boxes p-4 mt-3">
+                                <div class="services_icon">
+                                    <i class="mbri-photo text-white bg_four_service"></i>
+                                </div>
+                                <div class="services_desc mt-4">
+                                    <h5 class="font-weight-bold">Responsive Design</h5>
+                                    <p class="mt-3 text_muted mb-0">The standard chunk of Lorem Ipsum used since the is reproduced below for those interested.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services End  -->
+
+    <!-- Features Start -->
+    <section class="section_all bg-light" id="features">
+        <div class="container">
+            <div class="row vertical_content_manage" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <div class="features_img mt-3">
+                        <img src="images\pc2.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="features_header mt-3">
+                        <h3 class="text-capitalize text-">Awesome Features For Your Modern Technology</h3>
+                    </div>
+                    <div class="features_box p-4 mt-5">
+                        <div class="features_icon">
+                            <i class="mbri-laptop text-white"></i>
+                        </div>
+                        <div class="features_details text-white">
+                            <p class="text-white mb-0">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others - which creates a distinct visual impression capitalized.</p>
+                        </div>
+                    </div>
+
+                    <div class="features_box p-4 mt-5">
+                        <div class="features_icon">
+                            <i class="mbri-touch-swipe text-white"></i>
+                        </div>
+                        <div class="features_details text-white">
+                            <p class="text-white mb-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum .</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features end -->
+
+    <!-- Portfolio Start -->
+    <section class="section_all" id="portfolio">
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-12">
+                    <div class="about_details  mt-3">
+                        <h3 class="text-capitalize mb-3">we do awesome work</h3>
+                        <div class="section_title_border"></div>
+                        <p class="text_muted mt-3"> You're never imagine that powerfull & creative business could be made that easy, The Simpale. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5" data-aos="fade-up">
+                <ul class="col mb-0 list-unstyled list-inline " id="menu-filter">
+                    <li class="list-inline-item"><a class="active" data-filter="*">All</a></li>
+                    <li class="list-inline-item"><a class="" data-filter=".web">Web</a></li>
+                    <li class="list-inline-item"><a class="" data-filter=".desktop">Desktop</a></li>
+                    <li class="list-inline-item"><a class="" data-filter=".php">Php</a></li>
+                    <li class="list-inline-item"><a class="" data-filter=".html">Html</a></li>
+                    <li class="list-inline-item"><a class="" data-filter=".css">Css</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-5 work-filter" data-aos="fade-up">
+                <div class="col-lg-4 css web">
+                    <div class="">
+                        <a class="img-zoom" href="images\portfolio\1.jpeg">
+                            <img class="img-fluid " src="images\portfolio\1.jpeg" alt="1">
+                            <div class="">
+                                <div class="">
+                                    <p class="text-light">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 php desktop">
+                    <div class="">
+                        <a class="img-zoom" href="images\portfolio\2.jpeg">
+                            <img class="img-fluid" src="images\portfolio\2.jpeg" alt="2">
+                            <div class="">
+                                <div class="">
+                                    <p class="text-light">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 css php">
+                    <div class="">
+                        <a class="img-zoom" href="images\portfolio\3.jpeg">
+                            <img class="img-fluid" src="images\portfolio\3.jpeg" alt="4">
+                            <div class="">
+                                <div class="">
+                                    <p class="text-light">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 web html">
+                    <div class="">
+                        <a class="img-zoom" href="images\portfolio\4.jpeg">
+                            <img class="img-fluid" src="images\portfolio\4.jpeg" alt="4">
+                            <div class="">
+                                <div class="">
+                                    <p class="text-light">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 html php">
+                    <div class="">
+                        <a class="img-zoom" href="images\portfolio\5.jpeg">
+                            <img class="img-fluid" src="images\portfolio\5.jpeg" alt="5">
+                            <div class="">
+                                <div class="">
+                                    <p class="text-light">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 desktop web">
+                    <div class="">
+                        <a class="img-zoom" href="images\portfolio\6.jpeg">
+                            <img class="img-fluid" src="images\portfolio\6.jpeg" alt="6">
+                            <div class="">
+                                <div class="">
+                                    <p class="text-light">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Work Gallary -->
+    </section>
+    <!-- End Work Section -->
+
+    <!--Start Testimonial-->
+    <section class="section_all bg-light" id="clients">
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-12">
+                    <div class="about_details mx-auto text-center mt-3">
+                        <h3 class="text-capitalize mb-3">What People Say's</h3>
+                        <div class="section_title_border mx-auto"></div>
+                        <p class="text_muted mt-3"> You're never imagine that powerfull & creative business could be made that easy, The Simpale Payment Solution. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5" data-aos="fade-up">
+                <div class="col-lg-12">
+                    <div id="owl-demo" class="owl-carousel owl-theme">
+                        <div class="item testi_box mx-auto text-center">
+                            <div class="testi_icon">
+                                <i class="mbri-user text_custom"></i>
+                            </div>
+                            <p class="review_box">"Luctus lobortis dui lobortis aptent tempus nec pellentesque, dapibus commodo mollis cum fermentum nec. Lorem Ipsum is simply dummy text of the printing. "</p>
+
+                            <p class="client_name text-center mb-0 mt-4 font-weight-bold">- Steven Joneson, Envato</p>
+                        </div>
+
+                        <div class="item testi_box mx-auto text-center">
+                            <div class="testi_icon">
+                                <i class="mbri-user2 text_custom"></i>
+                            </div>
+                            <p class="review_box">"Luctus lobortis dui lobortis aptent tempus nec pellentesque, dapibus commodo mollis cum fermentum nec. Lorem Ipsum is simply dummy text of the printing. "</p>
+
+                            <p class="client_name text-center mb-0 mt-4 font-weight-bold">- Anna Arceneaux, Envato</p>
+                        </div>
+
+                        <div class="item testi_box mx-auto text-center">
+                            <div class="testi_icon">
+                                <i class="mbri-github text_custom"></i>
+                            </div>
+                            <p class="review_box">"Luctus lobortis dui lobortis aptent tempus nec pellentesque, dapibus commodo mollis cum fermentum nec. Lorem Ipsum is simply dummy text of the printing. "</p>
+
+                            <p class="client_name text-center mb-0 mt-4 font-weight-bold">- Jeffrey Snyder, Envato</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Testimonial-->
+
+    <!-- Start Pricing -->
+    <section class="section_all" id="pricing">
+        <div class="container">
+            <div class="row vertical_content_manage" data-aos="fade-up">
+                <div class="col-lg-4">
+                    <div class="price_box bg-white text-center mt-3">
+                        <div class="plan-name">
+                            <h3 class="text_custom">Kilo</h3>
+                            <p>Perfact For you</p>
+                        </div>
+                        <div class="pricing_header mt-4">
+                            <div class="price_tag_heading mt-4">
+                                <h2 class="mb-0"><sub>Rp</sub>100K<span>/bulan</span></h2>
+                            </div>
+                        </div>
+                        <div class="list_price_features text_muted mb-4 mt-4">
+                            <p>Speed 1 Mbps</p>
+                            <p>Internet Unlimited</p>
+                            <p>24/7 Support</p>
+                            <p class="mb-0">Free Email Support</p>
+                        </div>
+                        <div class="">
+                            <a href="#" class="btn btn_custom btn_rounded">Choose a Plan</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="price_box bg-white text-center active mt-3">
+                        <div class="plan-name">
+                            <h3 class="text_custom">Mega</h3>
+                            <p>Perfact For you</p>
+                        </div>
+                        <div class="pricing_header mt-4">
+                            <div class="price_tag_heading mt-4">
+                                <h2 class="mb-0"><sub>Rp</sub>200K<span>/bulan</span></h2>
+                            </div>
+                        </div>
+                        <div class="list_price_features text_muted mb-4 mt-4">
+                            <p>Speed 2 Mbps</p>
+                            <p>Internet Unlimited</p>
+                            <p>24/7 Support</p>
+                            <p class="mb-0">Free Email Support</p>
+                        </div>
+                        <div class="">
+                            <a href="#" class="btn btn_custom btn_rounded">Choose a Plan</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="price_box bg-white text-center mt-3">
+                        <div class="plan-name">
+                            <h3 class="text_custom">Giga</h3>
+                            <p>Perfact For you</p>
+                        </div>
+                        <div class="pricing_header mt-4">
+                            <div class="price_tag_heading mt-4">
+                                <h2 class="mb-0"><sub>Rp</sub>300K<span>/bulan</span></h2>
+                            </div>
+                        </div>
+                        <div class="list_price_features text_muted mb-4 mt-4">
+                            <p>Speed 3 Mbps</p>
+                            <p>Internet Unlimited</p>
+                            <p>24/7 Support</p>
+                            <p class="mb-0">Free Email Support</p>
+                        </div>
+                        <div class="">
+                            <a href="#" class="btn btn_custom btn_rounded">Choose a Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Pricing -->
+
+    <!-- Great People Start -->
+    <section class="section_all bg-light">
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-12 text-center">
+                    <div class="about_details mx-auto mt-3">
+                        <h3 class="text-capitalize  mb-3">Our Great People</h3>
+                        <div class="section_title_border mx-auto"></div>
+                        <p class="text_muted mt-3"> You're never imagine that powerfull & creative business could be made that easy, The Simpale Payment Solution. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5" data-aos="fade-up">
+                <div class="col-lg-2">
+                    <div class="logo_img mt-3">
+                        <img src="images\client\1.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="logo_img mt-3">
+                        <img src="images\client\2.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="logo_img mt-3">
+                        <img src="images\client\3.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="logo_img mt-3">
+                        <img src="images\client\4.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="logo_img mt-3">
+                        <img src="images\client\5.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="logo_img mt-3">
+                        <img src="images\client\6.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Great People End  -->
+
+    <!-- Contact Us Start -->
+    <section class="section_all" id="contact">
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-12 text-center">
+                    <div class="about_details mx-auto mt-3">
+                        <h3 class="text-capitalize  mb-3">you want to get started</h3>
+                        <div class="section_title_border mx-auto"></div>
+                        <p class="text_muted mt-3"> You're never imagine that powerfull & creative business could be made that easy, The Simpale Payment Solution. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row vertical_content_manage mt-5" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <div style="overflow:hidden;width: 330px;position: relative;">
+                        <iframe width="324" height="400" src="https://maps.google.com/maps?width=324&amp;height=400&amp;hl=en&amp;q=Banjar%20Town%20Square+(Kota%20Banjar)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <div style="position: relative;width: 80%;bottom: 0px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;"></div>
+                        <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <div class="about_details_box bg-white p-4 mt-3">
+                            <h5>Telepon</h5>
+                            <li>+62 81-211-326-207</li>
+                            <li>+62 82-120-215-248</li>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="about_details_box bg-white p-4 mt-3">
+                            <h5>Email</h5>
+                            <li>info@icmp.my.id</li>
+                            <li>support@icmp.my.id</li>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="about_details_box bg-white p-4 mt-3">
+                            <h5>Alamat</h5>
+                            <li>Kota Banjar</li>
+                            <li>Jawa Barat</li>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us End -->
+
+    <!-- Start Footer -->
+    <footer class="section_all  pb-0 footer_detail footer_background">
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+            </div>
+            <div class="fot_bor"></div>
+            <div class="col-lg-12">
+                <div class=" text-center">
+                    <p class="text-white mb-0">2019 &copy; icmp.my.id</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- JAVASCRIPTS -->
+    <script src="js\jquery.min.js"></script>
+    <script src="js\popper.min.js"></script>
+    <script src="js\bootstrap.min.js"></script>
+    <!--TESTISLIDER JS-->
+    <script src="js\owl.carousel.min.js"></script>
+    <script src="js\isotope.js"></script>
+    <script src="js\jquery.magnific-popup.min.js"></script>
+    <script src="js\scrollspy.min.js"></script>
+    <script src="js\jquery.easing.min.js"></script>
+    <!-- Animate js -->
+    <script src="js\aos.js"></script>
+    <script src="js\custom.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-in-out-sine',
+            duration: 1000
+        });
+    </script> 
+    <script src="js\inspect-element.js"></script>
+    <script src="js\disable-it.js"></script>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5c33568c280f3649d4f3f644/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+</body>
+
+</html>
