@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Super-MI</title>
+    <link rel="icon" href="assets\img\favicon.png">
+    <link rel="apple-touch-icon" href="assets\img\favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link id="bootstrap_theme" rel="stylesheet" href="assets\css\theme-4-bootstrap.css">
+    <link rel="stylesheet" href="assets\css\vendor.css">
+    <link id="theme" rel="stylesheet" href="assets\css\theme-4.css">
+    <link rel="stylesheet" href="assets\css\demo.css">
+    <link rel="stylesheet" href="assets\css\custom.css">
+    <script src="assets\js\modernizr.js"></script>
+  </head>
+  <body>
+<!-- 
+======================================================
+created     : Lalat Merah
+situs       : wp.icmp.my.id
+whatsapp    : 082-120-215-248
+ig          : @alpuketmerah
+====================================================== 
+-->
+    <div class="site">
+      <div id="site_loader" class="site-loader">
+        <div class="spinner"><span class="bounce"></span><span class="bounce"></span><span class="bounce"></span></div>
+      </div>
+      <!-- .site-loader-->
+      
+      <!-- .theme-option-->
+      <div class="site-canvas">
+        <div id="site_header" class="site-header">
+          <nav id="site_header_navbar" class="site-header-navbar navbar navbar-fixed-top navbar-lg navbar-bg-from-transparent navbar-fg-from-light navbar-light">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#site_header_navbar_collapse" class="navbar-toggle collapsed"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand navbar-brand-has-media"><span class="navbar-brand-elem-wrap"><span class="text">Brand</span><img src="assets\img\site-header-navbar-brand-media-img-dark.png" alt="" class="navbar-brand-media-img navbar-brand-media-img-dark"><img src="assets\img\site-header-navbar-brand-media-img-light.png" alt="" class="navbar-brand-media-img navbar-brand-media-img-light"></span></a>
+              </div>
+              <div id="site_header_navbar_collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="login.html" ><span class="navbar-nav-elem-wrap"><span class="text">Home</span></span></a></li>
+                  <li><a href="#service_section" data-smooth-scroll="true"><span class="navbar-nav-elem-wrap"><span class="text">Services</span></span></a></li>
+                  <li><a href="#portfolio_section" data-smooth-scroll="true"><span class="navbar-nav-elem-wrap"><span class="text">Portfolio</span></span></a></li>
+                  <li><a href="#testimonial_section" data-smooth-scroll="true"><span class="navbar-nav-elem-wrap"><span class="text">Testimonial</span></span></a></li>
+                  <li><a href="#pricing_section" data-smooth-scroll="true"><span class="navbar-nav-elem-wrap"><span class="text">Pricing</span></span></a></li>
+                  <li><a href="#faq_section" data-smooth-scroll="true"><span class="navbar-nav-elem-wrap"><span class="text">FAQ</span></span></a></li>
+                  <li><a href="#contact_section" data-smooth-scroll="true"><span class="navbar-nav-elem-wrap"><span class="text">Contact</span></span></a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!-- .site-header-->
+        <div id="site_content" class="site-content">
+          <div id="page_intro_section" style="height:100vh;" class="align align-middle page-intro-section page-intro-section-lg section section-md bg-primary">
+            <div data-css-background-image="assets/img/page-intro-bg-pattern.png" class="bg-img bg-img-parallax bg-repeat bg-no-cover"></div>
+            <!-- .bg-img-->
+            <div class="col-lg-3"></div>
+            <div data-wow-delay="50ms" class="widget-section widget widget_text col-sm-12 col-md-12 col-lg-6 wow fadeInUpShort">
+                <div class="widget-wrap">
+                  <div class="textwidget">
+                    <div class="card card-light">
+                      <div class="card-title pt-md bg-secondary">
+                        <div class="card-text"><center>
+                          <div class="title primary-text-light">Terima Kasih</div>
+                          <div class="subtitle secondary-text-light">Anda sudah keluar dari layanan SUPER-MI Hotspot</div></center></div>
+                        </div>
+                        <div class="card">
+                          <tr>
+                            <td>
+                              <div class="hotsite-container favsite-count" >
+                                <div class="hotsite hotsite-ele cur">
+                                  <div class="row">
+                                    <div class="panel panel-default">
+                                      <div class="panel-body">
+                                        <table class="table table-striped">
+                                          <tbody>
+                                            <tr>
+                                              <td class="success">Username</td>
+                                              <td class="danger">$(username)</td>
+                                            </tr>
+                                            <tr>
+                                              <td>IP Address</td>
+                                              <td>$(ip)</td>
+                                            </tr>
+                                            <tr>
+                                              <td class="success">MAC Address</td>
+                                              <td class="danger">$(mac)</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Session Time</td>
+                                              <td>$(uptime)</td>
+                                            </tr>
+                                            <tr>
+                                              <td class="success">Download / Upload</td>
+                                              <td class="danger">$(bytes-out-nice) / $(bytes-in-nice)</td>
+                                            </tr>
+                                            $(if limit-bytes-total)
+                                            <tr>
+                                              <td>Sisa Kuota</td>
+                                              <td>$(if limit-bytes-total) 
+                                                <script language=javascript>result = ($(limit-bytes-total)/1000000).toFixed(2)
+                                                document.write(result)</script> MiB
+                                                $(endif)
+                                                $(if limit-bytes-total == '')Unlimited$(endif)
+                                              </td>
+                                            </tr>
+                                            $(else)
+                                            <tr>
+                                              <td>Sisa Kuota</td>
+                                              <td>$(if limit-bytes-out) 
+                                                <script language=javascript>result = ($(limit-bytes-out)/1000000).toFixed(2)
+                                                document.write(result)</script> MiB
+                                                $(endif)
+                                                $(if limit-bytes-out == '')Unlimited$(endif)
+                                              </td>
+                                            </tr>
+                                            $(endif) 
+                                            $(if session-time-left)
+                                            <tr>
+                                              <td class="success">Sisa Waktu</td>
+                                              <td class="danger">$(session-time-left)</td>
+                                            </tr>
+                                            $(endif) 
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div id="service_section" class="service-section section section-md bg-light-dk">
+            <div class="container">
+              <div class="flexible-widgets row">
+                <div class="widget-section widget widget_text wow fadeInUpShort col-md-8 col-md-offset-2 mb-xl text-center">
+                  <div class="widget-wrap">
+                    <h2 class="widget-title primary-text-dark">LAYANANA</h2>
+                    <div class="textwidget">
+                      <p class="text-lead primary-text-dark">Tersedia layanan lain yang bisa anda butuhkan...</p>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card media-object-card card-light">
+                        <div class="media">
+                          <div class="media-left"><img src="assets\img\service-icon-1.png" alt="" class="media-object avatar avatar-lg">
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">Web Development</h4>
+                            <p>
+                              Layanan pembuatan website seperti Business, Portfolio, Landing Page, Blog, Entertaiment, dll.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="200ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card media-object-card card-light">
+                        <div class="media">
+                          <div class="media-left"><img src="assets\img\service-icon-2.png" alt="" class="media-object avatar avatar-lg">
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">Graphic Design</h4>
+                            <p>
+                              Layanan pembuatan desain grafis, logo, portfolio, video editing, photo editing, home arsitektur, dll.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="300ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card media-object-card card-light">
+                        <div class="media">
+                          <div class="media-left"><img src="assets\img\service-icon-3.png" alt="" class="media-object avatar avatar-lg">
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">IT Infrastructure</h4>
+                            <p>
+                              Layanan pembuatan jaringan hotspot, warnet, maintenance komputer, server cloud, dll.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .section-->
+          <div id="portfolio_section" class="portfolio-section section section-md bg-primary">
+            <div class="container">
+              <div class="flexible-widgets row">
+                <div class="widget-section widget widget_text wow fadeInUpShort col-md-8 col-md-offset-2 mb-xl text-center">
+                  <div class="widget-wrap">
+                    <h2 class="widget-title primary-text-light">Portfolio Kerja</h2>
+                    <div class="textwidget">
+                      <p class="text-lead primary-text-light">Beberapa portfolio kerja yang pernah di kerjakan...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flexible-widgets row popup-gallery">
+                <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card card-light">
+                        <div class="card-media"><a href="assets\img\portfolio-1.png" class="popup-gallery-link"><img src="assets\img\portfolio-1.png" alt="" class="card-img"></a></div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\portfolio-avatar-1.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Desktop style</span><span class="subtitle">Project Super-MI #Slide</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="200ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card card-light">
+                        <div class="card-media"><a href="assets\img\portfolio-2.png" class="popup-gallery-link"><img src="assets\img\portfolio-2.png" alt="" class="card-img"></a></div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\portfolio-avatar-2.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Desktop style</span><span class="subtitle">Project Super-MI #Slide</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="300ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card card-light">
+                        <div class="card-media"><a href="assets\img\portfolio-3.png" class="popup-gallery-link"><img src="assets\img\portfolio-3.png" alt="" class="card-img"></a></div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\portfolio-avatar-3.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Desktop style</span><span class="subtitle">Project Super-MI #Slide</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="300ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card card-light">
+                        <div class="card-media"><a href="assets\img\portfolio-mobile-1.png" class="popup-gallery-link"><img src="assets\img\portfolio-mobile-1.png" alt="" class="card-img"></a></div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\portfolio-avatar-3.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Mobile style</span><span class="subtitle">Project Super-MI #Slide</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="300ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card card-light">
+                        <div class="card-media"><a href="assets\img\portfolio-mobile-2.png" class="popup-gallery-link"><img src="assets\img\portfolio-mobile-2.png" alt="" class="card-img"></a></div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\portfolio-avatar-3.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Mobile style</span><span class="subtitle">Project Super-MI #Slide</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="300ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card card-light">
+                        <div class="card-media"><a href="assets\img\portfolio-mobile-3.png" class="popup-gallery-link"><img src="assets\img\portfolio-mobile-3.png" alt="" class="card-img"></a></div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\portfolio-avatar-3.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Mobile style</span><span class="subtitle">Project Super-MI #Slide</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="testimonial_section" class="testimonial-section section section-md bg-light-dk">
+            <div class="container">
+              <div class="flexible-widgets row">
+                <div class="widget-section widget widget_text wow fadeInUpShort col-md-8 col-md-offset-2 mb-xl text-center">
+                  <div class="widget-wrap">
+                    <h2 class="widget-title primary-text-dark">Testimoni Client</h2>
+                    <div class="textwidget">
+                      <p class="text-lead primary-text-dark">Beberapa testimoni yang sudah menggunakan layanan jasa kami...</p>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-vr wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card blockquote-card card-light">
+                        <div class="card-block">
+                          <div class="card-title">
+                            <div class="card-text"><span class="title">Internet super murah</span><span class="subtitle"><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span></span></div>
+                          </div>
+                          <div class="card-content">
+                            <p>
+                              Layanan internet yang ditawarkan sangat sesuai, cepat dan super murah. Akses internet unlimited tanpa batas dan sinyal stabil.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\client-testimonial-avatar-1.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Erika</span>
+                            <cite class="subtitle">Mahasiswa</cite>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="200ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-vr wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card blockquote-card card-light">
+                        <div class="card-block">
+                          <div class="card-title">
+                            <div class="card-text"><span class="title">Bebas akses kemana saja</span><span class="subtitle"><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span></span></div>
+                          </div>
+                          <div class="card-content">
+                            <p>
+                              Layanan internet yang ditawarkan bisa akses tanpa batas kemana saja tanpa terkenan blokir seperti provider lain.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\client-testimonial-avatar-2.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Murdo</span>
+                            <cite class="subtitle">Influencer</cite>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="300ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-vr wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card blockquote-card card-light">
+                        <div class="card-block">
+                          <div class="card-title">
+                            <div class="card-text"><span class="title">Layanan prima</span><span class="subtitle"><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span><span class="icon fa fa-star"></span></span></div>
+                          </div>
+                          <div class="card-content">
+                            <p>
+                              Tidak cuma menawarkan layanan internet, ternyata juga bisa benerin komputer/laptop, editkan foto dan pembuatan website.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card-header">
+                          <div class="card-avatar"><img src="assets\img\client-testimonial-avatar-3.png" alt="" class="avatar"></div>
+                          <div class="card-text"><span class="title">Rika</span>
+                            <cite class="subtitle">Blogger</cite>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .section-->
+          <div id="pricing_section" class="pricing-section section section-md bg-primary">
+            <div class="container">
+              <div class="flexible-widgets row">
+                <div class="widget-section widget widget_text wow fadeInUpShort col-md-8 col-md-offset-2 mb-xl text-center">
+                  <div class="widget-wrap">
+                    <h2 class="widget-title primary-text-light">Harga Paket</h2>
+                    <div class="textwidget">
+                      <p class="text-lead primary-text-light">Daftar harga paket layanan internet unlimited</p>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card pricing-table-card card-light">
+                        <div class="card-media"><img src="assets\img\pricing-table-icon-1.png" alt="" width="72" height="72" class="img"></div>
+                        <div class="card-title">
+                          <div class="card-text"><span class="title">Starter</span><span class="price"><span class="currency">Rp</span><span class="value">50.000</span><span class="per">/bulan</span></span></div>
+                        </div>
+                        <div class="card-content">
+                          <ul>
+                            <li><span class="elem-wrap"><span class="text">Speed internet 1 Mbps</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">Paket unlimited</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">-</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">-</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="card-cta"><a href="#" class="btn btn-wide btn-primary"><span class="btn-elem-wrap"><span class="text">Purchase</span></span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="200ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card pricing-table-card card-light"><span class="card-badge"><span class="icon fa fa-star"></span></span>
+                        <div class="card-media"><img src="assets\img\pricing-table-icon-2.png" alt="" width="72" height="72" class="img"></div>
+                        <div class="card-title">
+                          <div class="card-text"><span class="title">Premium</span><span class="price"><span class="currency">Rp</span><span class="value">100.000</span><span class="per">/bulan</span></span></div>
+                        </div>
+                        <div class="card-content">
+                          <ul>
+                            <li><span class="elem-wrap"><span class="text">Speed internet 2 Mbps</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">Paket unlimited</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">Dipinjamkan router wifi</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">-</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="card-cta"><a href="#" class="btn btn-wide btn-primary"><span class="btn-elem-wrap"><span class="text">Purchase</span></span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-wow-delay="300ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card pricing-table-card card-light">
+                        <div class="card-media"><img src="assets\img\pricing-table-icon-3.png" alt="" width="72" height="72" class="img"></div>
+                        <div class="card-title">
+                          <div class="card-text"><span class="title">Ultimate</span><span class="price"><span class="currency">Rp</span><span class="value">175.000</span><span class="per">/bulan</span></span></div>
+                        </div>
+                        <div class="card-content">
+                          <ul>
+                            <li><span class="elem-wrap"><span class="text">Speed internet 4 Mbps</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">Paket unlimited</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">Dipinjamkan router wifi</span></span></li>
+                            <li><span class="elem-wrap"><span class="text">Support layanan 24jam</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="card-cta"><a href="#" class="btn btn-wide btn-primary"><span class="btn-elem-wrap"><span class="text">Purchase</span></span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="faq_section" class="faq-section section section-md bg-light-dk">
+            <div class="container">
+              <div class="flexible-widgets row">
+                <div class="widget-section widget widget_text wow fadeInUpShort col-md-8 col-md-offset-2 mb-xl text-center">
+                  <div class="widget-wrap">
+                    <h2 class="widget-title primary-text-dark">Frequently Asked Questions</h2>
+                  </div>
+                </div>
+                <div data-wow-delay="50ms" class="widget-section widget widget_text col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div id="accordion_1" class="expansion-panel-group expansion-panel-group-light">
+                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_1" class="expansion-panel-header active"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title">Apa itu SUPER-MI Hotspot?</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"><span class="icon icon-fw icon-active fa fa-minus"></span><span class="icon icon-fw icon-inactive fa fa-plus"></span></span></span></a>
+                          <div id="collapse_1" class="accordion-body collapse in">
+                            <div class="expansion-panel-body">
+                              SUPER-MI Hotspot merupakan layanan internet berbasis hotspot dengan kecepatan tinggi tanpa kuota namun dengan harga yang terjangkau.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_2" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title">Bagaimana Cara Daftar?</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"><span class="icon icon-fw icon-active fa fa-minus"></span><span class="icon icon-fw icon-inactive fa fa-plus"></span></span></span></a>
+                          <div id="collapse_2" class="accordion-body collapse">
+                            <div class="expansion-panel-body">
+                              Untuk mendaftar/berlangganan layanan SUPER-MI Hotspot, Anda bisa menghubungi kontak person yang ada dibagian Contact.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_3" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title">Bagaimana Cara Menggunakan?</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"><span class="icon icon-fw icon-active fa fa-minus"></span><span class="icon icon-fw icon-inactive fa fa-plus"></span></span></span></a>
+                          <div id="collapse_3" class="accordion-body collapse">
+                            <div class="expansion-panel-body">
+                              Setelah anda berlangganan layanan SUPER-MI Hotspot, Anda akan diberikan username dan password yang nantikan bisa digunakan untuk akses ke internet.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_4" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title">Apakah akses internet unlimited?</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"><span class="icon icon-fw icon-active fa fa-minus"></span><span class="icon icon-fw icon-inactive fa fa-plus"></span></span></span></a>
+                          <div id="collapse_4" class="accordion-body collapse">
+                            <div class="expansion-panel-body">
+                              Semua layanan paket yang diberikan bersifat unlimited, bisa download/upload data sepuasnya tanpa khawatir kuota habis.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .section-->
+          <div id="contact_section" class="contact-section section section-md bg-primary">
+            <div class="container">
+              <div class="flexible-widgets row">
+                <div class="widget-section widget widget_text wow fadeInUpShort col-md-8 col-md-offset-2 mb-xl text-center">
+                  <div class="widget-wrap">
+                    <h2 class="widget-title primary-text-light">Hubungi Kami</h2>
+                    <div class="textwidget">
+                      <p class="text-lead primary-text-light">Jika anda ingin berlangganan layanan SUPER-MI Hotspot atau membutuhkan layanan jasa lainnya, bisa menghubungi kami di...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flexible-widgets row d-sm-flex flex-items-sm-middle">
+                <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-7 col-md-6 col-md-offset-1 col-lg-5 col-lg-offset-1 mb-gg wow fadeInUpShort">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div class="card card-light">
+                        <div class="flexible-widgets row popup-gallery">
+                          <div class="widget-wrap">
+                            <div class="textwidget">
+                              <div class="card card-light">
+                                <div class="card-media"><a href="assets\img\map.png" class="popup-gallery-link"><img src="assets\img\map.png" alt="" class="card-img"></a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="widget-section widget widget_text col-sm-5 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-1">
+                  <div class="widget-wrap">
+                    <div class="textwidget">
+                      <div data-wow-delay="200ms" class="card card media-object-card mb-gg card-light wow fadeInUpShort">
+                        <div class="media">
+                          <div class="media-left"><img src="assets\img\contact-info-icon-1.png" alt="" class="media-object avatar avatar-lg"></div>
+                          <div class="media-body">
+                            <h4 class="media-heading">Alamat Kantor</h4>
+                            <p>Kota Banjar<br>Jawa Barat</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-wow-delay="300ms" class="card card media-object-card mb-gg card-light wow fadeInUpShort">
+                        <div class="media">
+                          <div class="media-left"><img src="assets\img\contact-info-icon-2.png" alt="" class="media-object avatar avatar-lg"></div>
+                          <div class="media-body">
+                            <h4 class="media-heading">Telepon</h4>
+                            <p><b>Tel:</b> +62 81-211-326-207<br><b>Fax:</b> - </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-wow-delay="400ms" class="card card media-object-card mb-gg card-light wow fadeInUpShort">
+                        <div class="media">
+                          <div class="media-left"><img src="assets\img\contact-info-icon-3.png" alt="" class="media-object avatar avatar-lg"></div>
+                          <div class="media-body">
+                            <h4 class="media-heading">E-mail</h4>
+                            <p><b>General:</b> info@icmp.my.id<br><b>Support:</b> support@icmp.my.id</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .section-->
+        </div>
+        <!-- .site-content-->
+        <div id="site_footer">
+          <div id="site_footer_info" class="site-footer-info section section-sm text-center bg-dark">
+            <div class="container">
+              <nav class="site-footer-social-nav mb-lg">
+                <ul class="site-footer-social-menu list-inline ml-0">
+                  <li data-wow-delay="100ms" class="menu-item px-md wow fadeInUpShort"><a href="https://www.facebook.com/" target="_blank" class="primary-text-light"><span class="icon fa fa-facebook-official"></span><span> Facebook</span></a></li>
+                  <li data-wow-delay="200ms" class="menu-item px-md wow fadeInUpShort"><a href="https://twitter.com/" target="_blank" class="primary-text-light"><span class="icon fa fa-twitter-square"></span><span> Twitter</span></a></li>
+                  <li data-wow-delay="300ms" class="menu-item px-md wow fadeInUpShort"><a href="https://plus.google.com/" target="_blank" class="primary-text-light"><span class="icon fa fa-google-plus-official"></span><span> Google+</span></a></li>
+                  <li data-wow-delay="400ms" class="menu-item px-md wow fadeInUpShort"><a href="https://www.instagram.com/alpuketmerah" target="_blank" class="primary-text-light"><span class="icon fa fa-instagram"></span><span> Instagram</span></a></li>
+                  <li data-wow-delay="500ms" class="menu-item px-md wow fadeInUpShort"><a href="https://wa.me/6281211326207?text=ping" target="_blank" class="primary-text-light"><span class="icon fa fa-whatsapp"></span><span> Whatsapp</span></a></li>
+                </ul>
+              </nav>
+              <div data-wow-delay="600ms" class="site-footer-copyright secondary-text-light wow fadeInUpShort">Copyright © 2019 icmp.my.id -  All Rights Reserved.</div>
+            </div>
+          </div>
+          <!-- .section-->
+        </div>
+        <!-- .site-footer-->
+      </div>
+    </div>
+    <script src="assets\js\jquery.min.js"></script>
+    <script src="assets\js\bootstrap.min.js"></script>
+    <script src="assets\js\vendor.js"></script>
+    <script src="assets\js\main.js"></script>
+    <script src="assets\js\demo.js"></script>
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5c33568c280f3649d4f3f644/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+  </body>
+</html>
